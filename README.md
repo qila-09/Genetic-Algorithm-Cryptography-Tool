@@ -41,6 +41,9 @@ algorithm, scoring candidate keys against English n-gram statistics.
 - Fixed-size `bool used[26]` array in crossover for O(1) duplicate checks
 
 ## Interesting implementation details
+- User has the choice to run on preset configuration or to set their own values
+  for the algorithm to use. They can change population size, mutation rate,
+  n-gram size, and maximum number of generations.
 - Crossover is a variation on order crossover (OX): a random segment is copied
   from one parent, then each remaining letter keeps its position from the other
   parent where that slot is free, and the rest fill the gaps in order.
