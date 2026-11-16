@@ -24,7 +24,11 @@ algorithm, scoring candidate keys against English n-gram statistics.
    keeping the key a valid permutation with no duplicates.
 5. **Mutation:** random swaps of two letters in the key.
 6. **Termination:** program ends after a fixed number of generations (default 750)
-   or when there is no increase in accuracy for 75 generations.
+   or when the best score has not increased for 75 generations.
+
+##Usage
+- Elitism guarantees the best score never decreases, even when crossover and
+  mutation produce worse children.
 
 ## Object-oriented design
 | Class | Responsibility |
@@ -41,14 +45,11 @@ algorithm, scoring candidate keys against English n-gram statistics.
 - Fixed-size `bool used[26]` array in crossover for O(1) duplicate checks
 
 ## Interesting implementation details
-- User has the choice to run on preset configuration or to set their own values
-  for the algorithm to use. They can change population size, mutation rate,
-  n-gram size, and maximum number of generations.
 - Crossover is a variation on order crossover (OX): a random segment is copied
   from one parent, then each remaining letter keeps its position from the other
   parent where that slot is free, and the rest fill the gaps in order.
-- Elitism means that accuracy increases at a much faster rate while it is
-  also never lost even with mutations and crossovers loosing accuracy.
+- Elitism guarantees the best score never decreases, even when crossover and
+  mutation produce worse children.
 - After 75 of generations with no improvement the algorithm stops to
   prevent unnecessary waiting
 
