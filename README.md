@@ -59,7 +59,7 @@ key in more than 90% of runs, typically within 150 generations and the
 success rate increases to 100% when the convergence detection is removed.
 Short ciphertexts are harder because there is less statistical signal.
 
-## Build and run
+## Build and run (Windows)
     git clone https://github.com/qila-09/Genetic-Algorithm-Cryptography-Tool.git
     cd Genetic-Algorithm-Cryptography-Tool
     Copy-Item source/4gram.txt .
