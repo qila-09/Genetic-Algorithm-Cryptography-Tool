@@ -61,8 +61,8 @@ Short ciphertexts are harder because there is less statistical signal.
 
 ## Build and run
     git clone https://github.com/qila-09/Genetic-Algorithm-Cryptography-Tool.git
-    Copy-Item source/4gram.txt .
     cd Genetic-Algorithm-Cryptography-Tool
+    Copy-Item source/4gram.txt .
     g++ -std=c++17 -O2 source/*.cpp -o cipher.exe
     .\cipher.exe
 
